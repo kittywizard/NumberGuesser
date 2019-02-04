@@ -6,20 +6,29 @@
 // need to generate correct guess number
 
 // variables
+let min = 1,
+    max = 10;
 
-let min, max, correct;
+let numGuesses = 3;
 
-const numGuesses = 3;
+//UI elements
+const minNum = document.querySelector('.min'),
+      maxNum = document.querySelector('.max'),
+      submitBtn = document.querySelector('#submit-btn');
+
+minNum.textContent = min;
+maxNum.textContent = max;
+
+//generate the correct answer
+let correct = Math.floor(Math.random() * 10) + 1; 
 
 //event listener for the button
-const submit = document.getElementById('submit-btn').addEventListener('click', generateGuesses);
+submitBtn.addEventListener('click', startTheGame);
 
-//function to generate numbers
-function generateGuesses() {
+
+function startTheGame() {
+    //grab the value from the submit form
     const guess = document.getElementById('guess').value;
-    console.log(guess);
 
-    min = Math.floor(Math.random() * 10) + 1;
-    console.log(min);
+
 }
-
