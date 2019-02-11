@@ -43,9 +43,29 @@ function startTheGame() {
 
   //check to see if guess is correct
 
-  if() {
-    
+  if(guess === correct) {
+      console.log("You win!");
+      //reset all the guesses/numbers etc
+      resetGame();
+  } else {
+    console.log("Loser! " + correct + " is the correct guess!");
+    //reset
+    //lower the numguesses variable
+    //display new amounts of remaining guesses
+    numGuesses -= 1;
+    console.log(numGuesses);
+
   }
+
+  //
+}
+
+function resetGame() {
+
+  numGuesses = 3;
+  let correct = Math.floor(Math.random() * 10) + 1; 
+  
+
 }
 
 function setMessage(msg, color){
