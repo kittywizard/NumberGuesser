@@ -14,7 +14,9 @@ let numGuesses = 3;
 //UI elements
 const minNum = document.querySelector('.min'),
       maxNum = document.querySelector('.max'),
-      submitBtn = document.querySelector('#submit-btn');
+      submitBtn = document.querySelector('#submit-btn'),
+      guessInput = document.querySelector('#guess'),
+      message = document.querySelector('.message');
 
 minNum.textContent = min;
 maxNum.textContent = max;
@@ -27,8 +29,29 @@ submitBtn.addEventListener('click', startTheGame);
 
 
 function startTheGame() {
-    //grab the value from the submit form
-    const guess = document.getElementById('guess').value;
+  let guess = parseInt(guessInput.value);
 
+  //validate your input!
+  /* check for: 
+      if entry is blank
+      if entry is above or below the min/max values
+  */
+
+  if(isNaN(guess) || guess > max || guess < min ) {
+    setMessage(`Please enter a number between ${min} and ${max}!`, 'red');
+  } 
+
+  //check to see if guess is correct
+
+  if() {
+    
+  }
+}
+
+function setMessage(msg, color){
+  console.log(msg);
+  // set the message from the parameters into the html
+  message.style.color = color;
+  message.textContent = msg;
 
 }
